@@ -1,7 +1,10 @@
 import { Module } from '@nestjs/common';
-import { SocketModule } from './socket/socket.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
-  imports: [SocketModule],
+    imports: [],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {}
