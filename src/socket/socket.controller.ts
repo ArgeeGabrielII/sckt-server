@@ -65,10 +65,10 @@ export class SocketController implements OnModuleInit {
           boundary = buffer.indexOf('\n');
         }
       });
+    });
 
-      server.listen(socketPath, () => {
-        console.log(`Server listening on ${socketPath}`);
-      });
+    server.listen(socketPath, () => {
+      console.log(`Server listening on ${socketPath}`);
     });
   }
 }
