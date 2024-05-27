@@ -1,5 +1,10 @@
 GIT_COMMIT := $(shell git rev-parse HEAD)
 
+git:
+	git add .
+	git commit -m "Updated Code: $(c)"
+	git push origin main
+
 build: 
 	docker build -t argeegabrielii/nest-socket-server:$(GIT_COMMIT) .
 	docker push argeegabrielii/nest-socket-server:$(GIT_COMMIT)
@@ -21,4 +26,4 @@ tst:
 		nubelacorp/dev-test:stable \
 		/var/run/dev-test/sock
 
-br: build run
+gbs: git build start
