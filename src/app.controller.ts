@@ -42,6 +42,9 @@ export class AppController implements OnModuleInit {
                         if (method === 'echo' && params && typeof params.message === 'string') {
                             const response: EchoResponse = this.echoService.echo(request.id, request.params.message);
                             client.write(JSON.stringify(response) + '\n');
+                        } else if (method === 'evaluate' && params && typeof params.message === 'string') {
+                            const response: EchoResponse = this.echoService.echo(request.id, request.params.message);
+                            client.write(JSON.stringify(response) + '\n');
                         } else {
                             client.end();
                         }
